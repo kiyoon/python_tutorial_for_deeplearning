@@ -1,5 +1,7 @@
 from functools import lru_cache
-#@lru_cache(maxsize=2)
+#from functools import cache
+
+@lru_cache(maxsize=5)
 def fib(n):
     if n <= 1:
         return n
@@ -20,7 +22,6 @@ def fib_fast(n):
         return result 
 
 
-@profile
 def main():
     for i in range(35):
         print(f'fib({i}) = {fib(i)}')
